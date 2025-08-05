@@ -1,5 +1,20 @@
 package com.projeto.forumhub.dados;
 
-public record CadastroTopicos(String titulo, String mensagem, String autor, String curso) {
+
+import jakarta.validation.constraints.NotBlank;
+
+public record CadastroTopicos(
+        Long id,
+        @NotBlank
+        String titulo,
+        @NotBlank
+        String mensagem,
+        String dataDeCriacao,
+        @NotBlank
+        EstadoTopico estadoTopico,
+        @NotBlank
+        String autor,
+        @NotBlank
+        String curso) {
 
 }
