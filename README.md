@@ -72,7 +72,7 @@ spring.flyway.enabled=true
 4. **API disponível em:**
 
 ```
-http://localhost:8080
+http://localhost:8081
 ```
 
 ## 🔧 Testando com Insomnia
