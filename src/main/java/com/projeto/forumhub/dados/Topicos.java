@@ -1,6 +1,7 @@
 package com.projeto.forumhub.dados;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Topicos {
     private String dataDeCriacao;
     private String autor;
     private String curso;
+    private String usuario;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "estado_topico", nullable = false)
@@ -38,7 +40,63 @@ public class Topicos {
         this.estadoTopico=cadastroTopicos.estadoTopico();
         this.autor=cadastroTopicos.autor();
         this.curso= cadastroTopicos.curso();
+        this.usuario= cadastroTopicos.usuario();
+    }
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getTitulo(){
+        return this.titulo;
+    }
+
+    public String getMensagem(){
+        return  this.mensagem;
+    }
+
+    public String getDataDeCriacao() {
+        return dataDeCriacao;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public EstadoTopico getEstadoTopico() {
+        return estadoTopico;
+    }
+
+    public void AtualizarInformacoes(@Valid AtualizarDados atualizarDados) {
+        if (atualizarDados.titulo() != null){
+            this.titulo=atualizarDados.titulo();
+        }
+
+        if (atualizarDados.mensagem() != null){
+            this.mensagem=atualizarDados.mensagem();
+        }
+
+        if (atualizarDados.dataDeCriacao() != null){
+            this.dataDeCriacao = atualizarDados.dataDeCriacao();
+        }
+
+        if (atualizarDados.estadoTopico() != null){
+            this.estadoTopico= EstadoTopico.valueOf(atualizarDados.estadoTopico());
+        }
+        if (atualizarDados.autor() != null){
+            this.autor= atualizarDados.autor();
+        }
+
+        if (atualizarDados.curso() != null){
+            this.curso = atualizarDados.curso();
+        }
     }
 }

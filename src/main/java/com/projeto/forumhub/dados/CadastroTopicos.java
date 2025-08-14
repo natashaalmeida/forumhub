@@ -2,6 +2,7 @@ package com.projeto.forumhub.dados;
 
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record CadastroTopicos(
         Long id,
@@ -9,12 +10,16 @@ public record CadastroTopicos(
         String titulo,
         @NotBlank
         String mensagem,
-        String dataDeCriacao,
         @NotBlank
+        String dataDeCriacao,
+
         EstadoTopico estadoTopico,
         @NotBlank
         String autor,
         @NotBlank
-        String curso) {
+        String curso,
+        @NotBlank
+        String usuario
+) {
 
 }

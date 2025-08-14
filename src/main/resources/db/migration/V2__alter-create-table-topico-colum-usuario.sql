@@ -1,0 +1,1 @@
+alter table topico add usuario varchar(50) not null;
