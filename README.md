@@ -72,7 +72,7 @@ spring.flyway.enabled=true
 4. **API disponível em:**
 
 ```
-http://localhost:8080
+http://localhost:8081
 ```
 
 ## 🔧 Testando com Insomnia
@@ -83,9 +83,9 @@ http://localhost:8080
 
 ### 2. Exemplo de requisições
 
-#### ➕ Criar tópico (POST `/topicos`)
+#### ➕ Criar tópico (POST `/topics`)
 ```json
-POST http://localhost:8080/topicos
+POST http://localhost:8081/topics
 Content-Type: application/json
 
 {
@@ -96,9 +96,9 @@ Content-Type: application/json
 }
 ```
 
-#### 📄 Listar tópicos (GET `/topicos`)
+#### 📄 Listar tópicos (GET `/topics`)
 ```http
-GET http://localhost:8080/topicos
+GET http://localhost:8081/topics
 ```
 
 #### 🔍 Buscar por ID (GET `/topicos/{id}`)
@@ -106,9 +106,9 @@ GET http://localhost:8080/topicos
 GET http://localhost:8080/topicos/1
 ```
 
-#### ✏️ Atualizar tópico (PUT `/topicos/{id}`)
+#### ✏️ Atualizar tópico (PUT `/topics/{id}`)
 ```json
-PUT http://localhost:8080/topicos/1
+PUT http://localhost:8081/topics/1
 Content-Type: application/json
 
 {
@@ -119,9 +119,9 @@ Content-Type: application/json
 }
 ```
 
-#### ❌ Deletar tópico (DELETE `/topicos/{id}`)
+#### ❌ Deletar tópico (DELETE `/topics/{id}`)
 ```http
-DELETE http://localhost:8080/topicos/1
+DELETE http://localhost:8081/topics/1
 ```
 
 ---
