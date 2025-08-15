@@ -2,6 +2,7 @@ package com.projeto.forumhub.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +18,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // desabilita CSRF para facilitar teste
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.DELETE, "/topics/**").permitAll() // permite DELETE sem login
                         .anyRequest().authenticated() // todas as requisições precisam de autenticação
                 )
                 .httpBasic(); // usa autenticação HTTP Basic

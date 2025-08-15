@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("topics")
+@RequestMapping("/topics")
 public class ForumController {
 
     @Autowired
@@ -35,6 +35,13 @@ public class ForumController {
        var topicox = repository.getReferenceById(atualizarDados.id());
        topicox.AtualizarInformacoes(atualizarDados);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+       repository.deleteById(id);
+    }
+
 
 
 }

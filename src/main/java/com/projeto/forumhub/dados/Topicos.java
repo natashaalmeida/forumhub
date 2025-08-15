@@ -84,10 +84,6 @@ public class Topicos {
             this.mensagem=atualizarDados.mensagem();
         }
 
-        if (atualizarDados.dataDeCriacao() != null){
-            this.dataDeCriacao = atualizarDados.dataDeCriacao();
-        }
-
         if (atualizarDados.estadoTopico() != null){
             this.estadoTopico= EstadoTopico.valueOf(atualizarDados.estadoTopico());
         }
